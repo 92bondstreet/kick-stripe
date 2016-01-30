@@ -1,0 +1,23 @@
+{
+  "name": "kick-start",
+  "version": "0.0.0",
+  "description": "A kickstarter boilerplate form for Stripe API payment",
+  "author": {
+    "name": "Yassine AZZOUT",
+    "email": "yassine.azzout@gmail.com",
+    "url": "http://www.92bondstreet.com"
+  },
+  "license": "ISC",
+  "scripts": {
+    "build": "mkdir -p public/dist/js && browserify -t brfs lib/index.js -o public/dist/js/bundle.js && cp lib/checkout.php public/dist/checkout.php",
+    "dist": "mkdir -p public/dist/js && browserify -t brfs -g uglifyify lib/index.js -o public/dist/js/bundle.js && cp lib/checkout.php public/dist/checkout.php",
+    "watch": "mkdir -p public/dist/js && watchify -v lib/index.js -o public/dist/js/bundle.js"
+  },
+  "devDependencies": {
+    "brfs": "^1.4.3",
+    "browserify": "^13.0.0",
+    "page": "^1.6.4",
+    "uglifyify": "^3.0.1",
+    "watchify": "^3.7.0"
+  }
+}
